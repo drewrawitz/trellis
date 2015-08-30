@@ -1,0 +1,22 @@
+---
+- include: "{{ project_deploy_hook_pre_organize | default('../hooks/example.yml') }}"
+
+- name: write unfinished file
+  file:
+    path: "{{ project_source_path }}/{{ deploy_helper.unfinished_filename }}"
+    state: touch
+
+- name: Copy files to new build dir
+  command: cp -pr {{ project_source_path }} {{ deploy_helper.new_release_path }}
+
+- name: Move project subtree into root folder
+  shell: mv {{ deploy_helper.new_release_path }}/{{ project_subtree }}/* {{ deploy_helper.new_release_path }}
+  when: project_subtree != 'False'
+
+- name: Remove unwanted files/folders from new release
+  file:
+    path: "{{ deploy_helper.new_release_path }}/{{ item }}"
+    state: absent
+  with_items: project_unwanted_items
+
+- include: "{{ project_deploy_hook_post_organize | default('../hooks/example.yml') }}"

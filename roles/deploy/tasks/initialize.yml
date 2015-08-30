@@ -1,0 +1,9 @@
+---
+- include: "{{ project_deploy_hook_pre_initialize | default('../hooks/example.yml') }}"
+
+- name: Initialize
+  deploy_helper:
+    path: "{{ project_root }}"
+    state: present
+
+- include: "{{ project_deploy_hook_post_initialize | default('../hooks/example.yml') }}"

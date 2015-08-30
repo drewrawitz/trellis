@@ -1,0 +1,13 @@
+---
+- include: "{{ project_deploy_hook_pre_finalize | default('../hooks/example.yml') }}"
+
+- name: Finalize the deploy
+  deploy_helper:
+    path: "{{ project_root }}"
+    release: "{{ deploy_helper.new_release }}"
+    state: finalize
+
+- include: "{{ project_deploy_hook_post_finalize | default('../hooks/post_finalize.yml') }}"
+
+- debug:
+    msg: "{{ project_version }}@{{ git_commit.after | truncate(7, True, '') }} deployed as release {{ deploy_helper.new_release }}"
