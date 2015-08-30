@@ -1,7 +1,7 @@
 ---
 - include: initialize.yml
 - include: update.yml
-- include: organize.yml
+- include: prepare.yml
 - include: build.yml
 - include: shared.yml
 - include: finalize.yml

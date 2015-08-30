@@ -7,16 +7,16 @@
 #   2. set the "project_deploy_hook_<pre/post>_<hook>" variable to
 #       "{{ playbook_dir }}/path/to/tasks-file.yml"
 #
-#   Available hooks:
-#     - project_deploy_hook_pre_initialize
-#     - project_deploy_hook_post_initialize
-#     - project_deploy_hook_pre_update
-#     - project_deploy_hook_post_update
-#     - project_deploy_hook_pre_organize
-#     - project_deploy_hook_post_organize
-#     - project_deploy_hook_pre_build
-#     - project_deploy_hook_post_build
-#     - project_deploy_hook_pre_shared
-#     - project_deploy_hook_post_shared
-#     - project_deploy_hook_pre_finalize
-#     - project_deploy_hook_post_finalize
+#  Available hooks:
+#    - project_deploy_hook_pre_initialize
+#    - project_deploy_hook_post_initialize
+#    - project_deploy_hook_pre_update
+#    - project_deploy_hook_post_update
+#    - project_deploy_hook_pre_prepare
+#    - project_deploy_hook_post_prepare
+#    - project_deploy_hook_pre_build
+#    - project_deploy_hook_post_build
+#    - project_deploy_hook_pre_shared
+#    - project_deploy_hook_post_shared
+#    - project_deploy_hook_pre_finalize
+#    - project_deploy_hook_post_finalize

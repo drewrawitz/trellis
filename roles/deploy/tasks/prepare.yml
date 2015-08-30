@@ -1,5 +1,5 @@
 ---
-- include: "{{ project_deploy_hook_pre_organize | default('../hooks/example.yml') }}"
+- include: "{{ project_deploy_hook_pre_prepare | default('../hooks/example.yml') }}"
 
 - name: write unfinished file
   file:
@@ -19,4 +19,4 @@
     state: absent
   with_items: project_unwanted_items
 
-- include: "{{ project_deploy_hook_post_organize | default('../hooks/example.yml') }}"
+- include: "{{ project_deploy_hook_post_prepare | default('../hooks/example.yml') }}"
