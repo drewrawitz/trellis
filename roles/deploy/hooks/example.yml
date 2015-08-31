@@ -16,7 +16,7 @@
 #    - project_deploy_hook_post_prepare
 #    - project_deploy_hook_pre_build
 #    - project_deploy_hook_post_build
-#    - project_deploy_hook_pre_shared
-#    - project_deploy_hook_post_shared
+#    - project_deploy_hook_pre_share
+#    - project_deploy_hook_post_share
 #    - project_deploy_hook_pre_finalize
 #    - project_deploy_hook_post_finalize

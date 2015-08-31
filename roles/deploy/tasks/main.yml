@@ -3,5 +3,5 @@
 - include: update.yml
 - include: prepare.yml
 - include: build.yml
-- include: shared.yml
+- include: share.yml
 - include: finalize.yml

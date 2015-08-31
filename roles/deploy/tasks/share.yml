@@ -1,5 +1,5 @@
 ---
-- include: "{{ project_deploy_hook_pre_shared | default('../hooks/example.yml') }}"
+- include: "{{ project_deploy_hook_pre_share | default('../hooks/example.yml') }}"
 
 - name: Check if project folders exist
   stat:
@@ -32,4 +32,4 @@
     state: link
   with_items: project_shared_children
 
-- include: "{{ project_deploy_hook_post_shared | default('../hooks/example.yml') }}"
+- include: "{{ project_deploy_hook_post_share | default('../hooks/example.yml') }}"
